@@ -1,0 +1,19 @@
+{
+  "name": "tx-messenger",
+  "version": "1.0.0",
+  "description": "Ultra-lightweight web messenger - DMs, file sharing, group audio",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "multer": "^2.0.2",
+    "socket.io": "^4.7.2",
+    "uuid": "^9.0.0"
+  }
+}

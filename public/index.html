@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TX — Lightweight Messenger</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <section id="join" class="panel">
+      <h1>TX</h1>
+      <p class="tagline">Ultra-lightweight messenger</p>
+      <form id="joinForm">
+        <input type="text" id="userName" placeholder="Your name" autocomplete="off" required>
+        <input type="text" id="roomId" placeholder="Room ID (e.g. lobby)" autocomplete="off" required>
+        <button type="submit">Join</button>
+      </form>
+    </section>
+
+    <section id="chat" class="panel hidden">
+      <header>
+        <button id="back" class="icon-btn" title="Leave room">←</button>
+        <div class="header-info">
+          <span id="roomLabel"></span>
+          <div id="connectionStatus" class="connection-status"></div>
+          <span id="userCount" class="user-count"></span>
+        </div>
+        <div class="call-controls">
+          <button id="joinCallBtn" class="icon-btn" title="Join voice call">📞</button>
+          <button id="micBtn" class="icon-btn hidden" title="Microphone">🎤</button>
+          <button id="speakerBtn" class="icon-btn active hidden" title="Speaker">🔊</button>
+        </div>
+      </header>
+
+      <div id="messages" class="messages" data-drop="true">
+        <p class="drop-hint">Drop files here</p>
+        <div id="typingIndicator" class="typing hidden"></div>
+      </div>
+
+      <form id="messageForm">
+        <div class="input-row">
+          <button type="button" id="emojiBtn" class="icon-btn" title="Emoji">😊</button>
+          <input type="text" id="messageInput" placeholder="Type a message..." autocomplete="off">
+          <button type="button" id="attachBtn" class="icon-btn" title="Attach file">📎</button>
+          <input type="file" id="fileInput" multiple hidden>
+          <button type="submit">Send</button>
+        </div>
+      </form>
+    </section>
+
+    <div id="emojiPicker" class="emoji-picker hidden"></div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
